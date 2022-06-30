@@ -1,8 +1,9 @@
 {
     "version":2,
-    "build":[
+    "name":"jwt-express-api-2",
+    "builds":[
         {
-            "src":"./index.js",
+            "src":"index.js",
             "use":"@vercel/node"
         }
     ],
