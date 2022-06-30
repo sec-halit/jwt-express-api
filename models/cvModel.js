@@ -71,6 +71,14 @@ const infoSchema =mongoose.Schema(
       type: String,
       required: [true, 'Please add a info phone'],
     },
+    fullName: {
+      type: String,
+      required: [true, 'Please add a info location'],
+    },
+    tagName: {
+      type: String,
+      required: [true, 'Please add a info phone'],
+    },
     email: {
       type: String,
       required: [true, 'Please add a email'],
