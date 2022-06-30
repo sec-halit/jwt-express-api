@@ -13,8 +13,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/api/cvs', require('./routes/cvRoutes'));
-app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/cvs', require('./api/cvRoutes'));
+app.use('/api/users', require('./api/userRoutes'));
 
 // Serve frontend
 // if (process.env.NODE_ENV === 'production') {
