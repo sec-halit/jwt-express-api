@@ -15,10 +15,20 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, 'Please add a password'],
     },
+    image: {
+      type: String,
+      default: ""
+    },
+    resetToken: { type: String },
+    update: { type: String },
+    validEmail: { type: String, default: "not" },
+    emailToken: { type: String },
   },
   {
     timestamps: true,
   }
 )
+
+
 
 module.exports = mongoose.model('User', userSchema)

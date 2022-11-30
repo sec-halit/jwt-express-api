@@ -6,9 +6,15 @@ const Cv = require('../models/cvModel')
 // @route   GET /api/cvs
 // @access  Private
 const getCvs = asyncHandler(async (req, res) => {
-  const cvItem = await Cv.find({ userId: req.user.id })
-
-  res.status(200).json(cvItem);
+  const {id} = req.params;
+  if(id){
+    const cvItem = await Cv.findOne({ id: id })
+    res.status(200).json(cvItem);
+  }else{
+    // const cvItem = await Cv.find({ userId: req.user.id })
+    const cvItem = await Cv.findOne().sort('-_id').cursor().next();
+    res.status(200).json(cvItem);
+  }
 })
 
 // @desc    Set goal
